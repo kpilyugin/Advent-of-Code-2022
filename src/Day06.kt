@@ -1,10 +1,6 @@
 fun main() {
-    fun indexAfterDistinct(input: String, count: Int): Int {
-        return input.windowed(count, 1)
-            .withIndex()
-            .first { it.value.toSet().size == count }
-            .index + count
-    }
+    fun indexAfterDistinct(input: String, count: Int): Int = input.windowed(count)
+        .indexOfFirst { it.toSet().size == count } + count
 
     fun part1(input: String) = indexAfterDistinct(input, 4)
 
