@@ -9,3 +9,8 @@ fun readInput(name: String) = inputFile(name).readText()
  */
 fun readInputLines(name: String) = inputFile(name).readLines()
 
+fun check(actual: Any, expected: Any) {
+    if (expected != actual) {
+        throw IllegalStateException("Correct result is $expected, but got $actual")
+    }
+}

@@ -23,7 +23,7 @@ fun main() {
             }
         }
         for (j in 0 until m) {
-            val column = (0 until n).map { table[it][j] }
+            val column = table.map { it[j] }
             for (i in column.indicesOfVisible()) {
                 d[i][j] = 1
             }
@@ -70,9 +70,7 @@ fun main() {
     }
 
     val testInput = readInputLines("Day08_test")
-    println(part1(testInput))
     check(part1(testInput) == 21)
-    println(part2(testInput))
     check(part2(testInput) == 8)
 
     val input = readInputLines("Day08")
