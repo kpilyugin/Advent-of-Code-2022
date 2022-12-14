@@ -1,4 +1,6 @@
 import java.io.File
+import kotlin.math.min
+import kotlin.math.max
 
 private fun inputFile(name: String) = File("src${File.separator}input", "$name.txt")
 
@@ -14,3 +16,5 @@ fun check(actual: Any, expected: Any) {
         throw IllegalStateException("Correct result is $expected, but got $actual")
     }
 }
+
+fun rangeBetween(a: Int, b: Int): IntRange = IntRange(min(a, b), max(a, b))
