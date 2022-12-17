@@ -1,11 +1,11 @@
-import kotlin.math.max
 import kotlin.math.abs
-
-data class Point(val x: Int, val y: Int) {
-    fun dist(other: Point) = max(abs(x - other.x), abs(y - other.y))
-}
+import kotlin.math.max
 
 fun main() {
+    data class Point(val x: Int, val y: Int) {
+        fun dist(other: Point) = max(abs(x - other.x), abs(y - other.y))
+    }
+
     fun Point.move(dir: String): Point {
         return when (dir) {
             "R" -> Point(x + 1, y)
