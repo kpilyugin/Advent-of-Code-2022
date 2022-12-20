@@ -1,8 +1,4 @@
 fun main() {
-    fun String.extractNumbers(): List<Int> = Regex("[0-9]+")
-        .findAll(this)
-        .map { match -> match.value.toInt() }
-        .toList()
 
     fun parseState(initial: String): MutableList<String> {
         return initial.lines()

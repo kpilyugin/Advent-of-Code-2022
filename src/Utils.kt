@@ -18,3 +18,8 @@ fun check(actual: Any, expected: Any) {
 }
 
 fun rangeBetween(a: Int, b: Int): IntRange = IntRange(min(a, b), max(a, b))
+
+fun String.extractNumbers(): List<Int> = Regex("[0-9]+")
+    .findAll(this)
+    .map { match -> match.value.toInt() }
+    .toList()
