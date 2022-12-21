@@ -10,11 +10,7 @@ fun main() {
         val mixed = initial.toMutableList()
         repeat(repeatMix) {
             for (pValue in initial) {
-                var idx = mixed.indexOf(pValue)
-                idx += (pValue.value % (n - 1)).toInt()
-                while (idx < 0) idx += n - 1
-                while (idx >= n) idx -= (n - 1)
-                check(idx in 0 until n)
+                val idx = (pValue.value + mixed.indexOf(pValue)).mod(n - 1)
                 mixed.remove(pValue)
                 mixed.add(idx, pValue)
             }
